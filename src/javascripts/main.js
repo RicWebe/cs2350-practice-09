@@ -4,8 +4,8 @@ import {movies} from './movies'
 
 for(let m of movies) {
     let m_thumb = document.getElementById('m' + m.id)
-    m_thumb.innerHTML =
-        <img src="${m.poster}" alt= "${m.title}" class="img-thumbnail"/>
+    m_thumb.innerHTML = `
+        <img src="${m.poster}" alt= "${m.title}" class="img-thumbnail"/>`
 
         m_thumb.onclick=function(){
             displayMovie(m)
@@ -15,8 +15,8 @@ for(let m of movies) {
 
 let featured_movie = document.querySelector(".featured")
 function displayMovie(movie){
-    featured_movie.innerHTML=
-    <div class="card" >
+    featured_movie.innerHTML= `
+    <div class="card">
             <div class="card-header">${movie.title}</div>
             <img src = "${movie.poster}" class="card-img-top" alt="${movie.title}"/>
             <div class="card-body">
@@ -33,6 +33,7 @@ function displayMovie(movie){
               </div>
             </div>
     </div>
+  `
 }
 
 function searchMovies (event){
